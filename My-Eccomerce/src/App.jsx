@@ -1,18 +1,36 @@
 // Components
 import Navbar from './components/navbar/navbar'
+import Logo from './components/logo/Logo'
 
 import { useState } from 'react'
 
 // CSS 
 import './App.css'
 
+// react router dom 
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
+
+//VIews
+import CartPage from './views/cartPage/CartPage'
+import HomePage from './views/homePage/HomePage'
+
 const App = () => {
 
   return (
-    <div>
-      <h1>Logo</h1>
+    <Router>
+    <div className='app'>
+
+      <Logo/>
       <Navbar/>
+
+    
+      <Routes>
+	    <Route path="/" element={<HomePage />}/>
+      <Route path="/Carrito" element={<CartPage />}/>
+      </Routes>
+
     </div>
+    </Router>
   )
 }
 
