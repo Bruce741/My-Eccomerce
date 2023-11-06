@@ -1,6 +1,6 @@
 import React from 'react'
 import { useEffect, useState } from 'react';
-
+import { Link} from 'react-router-dom'
 // DB firestore 
 import { db } from '../../firebase/firebaseConfig';
 
@@ -8,7 +8,7 @@ import { db } from '../../firebase/firebaseConfig';
 import { collection, query, getDocs } from "firebase/firestore";
 
 // Card
-import CardCarta from '../../components/card/card';
+import CardCarta from '../../components/card/Card';
 
 //CSS
 import './HomePage.css'
@@ -35,7 +35,11 @@ const Home = () => {
       <h1>HomePage</h1>
       <div className='CardListContainer'>
         {cartas.map((carta)=> {
-          return <CardCarta key={carta.id} carta={carta}/>
+          return (
+          <Link to={`DetailPage/${carta.id}`} key={carta.id}>
+            <CardCarta carta={carta}/> 
+          </Link>
+          )
         })}
       </div>
     </div>

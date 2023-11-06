@@ -1,8 +1,14 @@
 import React from 'react'
 
+import { TextField } from '@mui/material'
+
 const cart = () => {
   return (
-    <h1>Carrito</h1>
+    <div>
+      <form>
+        
+      </form>
+    </div>
   )
 }
 

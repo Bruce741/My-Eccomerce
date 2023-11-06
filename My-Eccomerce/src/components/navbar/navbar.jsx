@@ -2,6 +2,7 @@ import React from 'react'
 import './navbar.css'
 import Cartwidget from '../cartwidget/cartwidget'
 import { Link } from 'react-router-dom'
+import SelectMenu from '../SelectMenu/SelectMenu'
 
 
 const Navbar = () => {
@@ -9,7 +10,7 @@ const Navbar = () => {
     <div>
         <div className='navbar'>
             <Link to="/">Home</Link>
-            <a>Tipo De Carta</a>
+            <SelectMenu/>
             <Link to="/Carrito"><Cartwidget/></Link>
         </div>
     </div>
