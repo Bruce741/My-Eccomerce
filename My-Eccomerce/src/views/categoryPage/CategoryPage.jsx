@@ -11,6 +11,7 @@ import { collection, query, getDocs, where } from "firebase/firestore";
 
 // Card
 import CardCarta from '../../components/card/Card';
+import Footer from '../../components/Footer/Footer';
 
 const CategoryPage = () => {
   const [cartasData, setCartasData] = useState([]);
@@ -41,6 +42,7 @@ const CategoryPage = () => {
           <CardCarta carta={carta} key={carta.id}/> 
         )
       })}
+      <Footer/>
     </div>
   )
 }

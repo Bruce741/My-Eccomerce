@@ -3,6 +3,8 @@ import Navbar from './components/navbar/navbar'
 import Logo from './components/logo/Logo'
 import { useState } from 'react'
 
+
+
 // CSS 
 import './App.css'
 
@@ -24,7 +26,7 @@ const App = () => {
 
       <Logo/>
       <Navbar/>
-
+  
     
       <Routes>
 	    <Route path="/" element={<HomePage />}/>

@@ -12,6 +12,8 @@ import CardCarta from '../../components/card/Card';
 
 //CSS
 import './HomePage.css'
+import Footer from '../../components/Footer/Footer';
+
 
 const Home = () => {
 
@@ -42,6 +44,7 @@ const Home = () => {
           )
         })}
       </div>
+      <Footer/>
     </div>
   )
 }

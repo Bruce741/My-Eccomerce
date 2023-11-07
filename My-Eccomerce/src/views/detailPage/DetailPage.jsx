@@ -8,6 +8,7 @@ import { collection, query, getDocs, where, documentId } from 'firebase/firestor
 
 // Card
 import CardCarta from '../../components/card/Card';
+import Footer from '../../components/Footer/Footer';
 
 const DetailPage = () => {
     const [cartaData, setCartaData] = useState([]);
@@ -35,6 +36,7 @@ const DetailPage = () => {
           <CardCarta carta={carta} key={carta.id}/> 
         )
       })}
+      <Footer/>
     </div>
   )
 }
