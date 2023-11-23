@@ -3,4 +3,9 @@
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 10px;
     justify-content: center;
+    margin: 10px;
+}
+
+a {
+    text-decoration: none;
 }

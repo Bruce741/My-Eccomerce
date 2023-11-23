@@ -1,0 +1,94 @@
+.Main {
+  display: flex;
+  gap: 1rem;
+}
+
+.Productos {
+  width: 70%;
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  padding: 1.5rem;
+}
+
+.ListadoPedidos {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(3.5px);
+  -webkit-backdrop-filter: blur(3.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 1.5rem;
+}
+
+.ContainerPadre {
+  width: 70%;
+  margin: auto;
+}
+
+.carta {
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(3.5px);
+  -webkit-backdrop-filter: blur(3.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.imgContainer {
+    
+}
+
+.imgCarta {
+    border-radius: 25px;
+}
+
+.Titulo {
+    margin: 2.5rem 0;
+}
+
+.h4 {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.tipo {
+    color: slategray;
+    font-size: 1rem;
+}
+
+.precio {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 1rem 0;
+}
+
+.nombreLista {
+    font-size: 1.3rem;
+
+}
+
+.listadoContainer {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    gap: 1rem;
+}
+
+.containerCartaList {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: space-between;
+    border: .5px solid slategray;
+    border-radius: .5rem;
+    padding: .5rem 1rem;
+}
+

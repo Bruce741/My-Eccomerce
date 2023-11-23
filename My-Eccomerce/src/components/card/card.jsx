@@ -3,9 +3,22 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import { CardActionArea } from '@mui/material';
+import { Button, CardActionArea } from '@mui/material';
+import { CartasContext } from '../../App';
+
+
+
 
 const CardCarta = ({ carta }) =>  {
+
+  const store = React.useContext(
+    CartasContext
+  );
+
+  const HandlerClick = () => {
+    store.setCartasPedidas((prevCartas) => [...prevCartas, carta]);
+  }
+
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardActionArea>
@@ -27,6 +40,7 @@ const CardCarta = ({ carta }) =>  {
           </Typography>
         </CardContent>
       </CardActionArea>
+      <Button onClick={HandlerClick}>Agregar al carrito</Button>
     </Card>
   );
 };

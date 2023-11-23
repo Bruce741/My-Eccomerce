@@ -30,19 +30,22 @@ const CategoryPage = () => {
       setCartasData(docs);
     };
     getCartas();
-  },[]);
+  },[tipo]);
 
-
+  console.log(tipo);
 
 
   return (
+    <div>
     <div className='Contenedor'>
         {cartasData.map((carta)=> {
         return (
           <CardCarta carta={carta} key={carta.id}/> 
         )
       })}
-      <Footer/>
+    
+    </div>
+    <Footer/>
     </div>
   )
 }

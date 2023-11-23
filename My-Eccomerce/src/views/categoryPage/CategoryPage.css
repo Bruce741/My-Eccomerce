@@ -5,3 +5,7 @@
     margin: 25px;
     gap: 10px;
 }
+
+a {
+    text-decoration: none;
+}

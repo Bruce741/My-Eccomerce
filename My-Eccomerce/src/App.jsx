@@ -3,7 +3,8 @@ import Navbar from './components/navbar/navbar'
 import Logo from './components/logo/Logo'
 import { useState } from 'react'
 
-
+// Context 
+import { createContext } from "react";
 
 // CSS 
 import './App.css'
@@ -17,10 +18,16 @@ import HomePage from './views/homePage/HomePage'
 import DetailPage from './views/detailPage/DetailPage'
 import CategoryPage from './views/categoryPage/CategoryPage'
 
+export const CartasContext = createContext();
 
 const App = () => {
 
+  const [cartasPedidas, setCartasPedidas] = useState([])
+
+  
+
   return (
+    <CartasContext.Provider value={{cartasPedidas, setCartasPedidas}}>
     <Router>
     <div className='app'>
 
@@ -37,6 +44,7 @@ const App = () => {
 
     </div>
     </Router>
+    </CartasContext.Provider>
   )
 }
 

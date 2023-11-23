@@ -25,9 +25,9 @@ export default function BasicSelect() {
           label="Tipo"
           onChange={handleChange}
         >
-          <Link to="CategoryPage/trampa"><MenuItem value={10}>Trampa</MenuItem></Link>
-          <Link to="CategoryPage/magia"><MenuItem value={20}>Magia</MenuItem></Link>
-          <Link to="CategoryPage/monstruo"><MenuItem value={30}>Monstruo</MenuItem></Link>
+          <MenuItem value='Trampa'><Link to="CategoryPage/trampa">Trampa</Link></MenuItem>
+          <MenuItem value='Magia'><Link to="CategoryPage/magia">Magia</Link></MenuItem>
+          <MenuItem value="Monstruo"><Link to="CategoryPage/monstruo">Monstruo</Link></MenuItem>
         </Select>
       </FormControl>
     </Box>
