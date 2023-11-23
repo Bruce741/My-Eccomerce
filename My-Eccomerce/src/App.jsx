@@ -3,6 +3,9 @@ import Navbar from './components/navbar/navbar'
 import Logo from './components/logo/Logo'
 import { useState } from 'react'
 
+// Toast
+import { Toaster } from 'react-hot-toast';
+
 // Context 
 import { createContext } from "react";
 
@@ -27,8 +30,10 @@ const App = () => {
   
 
   return (
+    
     <CartasContext.Provider value={{cartasPedidas, setCartasPedidas}}>
     <Router>
+    
     <div className='app'>
 
       <Logo/>
@@ -44,7 +49,9 @@ const App = () => {
 
     </div>
     </Router>
+    <Toaster/>
     </CartasContext.Provider>
+    
   )
 }
 

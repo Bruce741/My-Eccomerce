@@ -5,7 +5,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { Button, CardActionArea } from '@mui/material';
 import { CartasContext } from '../../App';
-
+import toast from 'react-hot-toast';
 
 
 
@@ -17,6 +17,7 @@ const CardCarta = ({ carta }) =>  {
 
   const HandlerClick = () => {
     store.setCartasPedidas((prevCartas) => [...prevCartas, carta]);
+    toast.success("Producto agregado");
   }
 
   return (

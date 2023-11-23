@@ -11,37 +11,24 @@ import CardCarta from "../../components/card/Card";
 import DeleteIcon from "@mui/icons-material/Delete";
 
 import "./CartPage.css";
-
-const initialState = {
-  nombre: "",
-  apellido: "",
-  numero: "",
-};
+import DialogCard from "./DiaLog/DialogCard";
+import toast from "react-hot-toast";
 
 const cart = () => {
   const context = useContext(CartasContext);
 
-  const [values, setValues] = useState(initialState);
-  const [pedidoID, setPedidoID] = useState("");
-  const [cartToSend, setCartToSend] = useState({});
-
-  const handleOnChange = (e) => {
-    const { value, name } = e.target;
-    setValues({ ...values, [name]: value });
-  };
-
-  const handleOnSubmit = async (e) => {
-    e.preventDefault();
-    const docRef = await addDoc(collection(db, "pedidos"), {
-      pedido:context.cartasPedidas, values
-    });
-    setPedidoID(docRef.id);
-    setValues(initialState);
-  };
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
 
   const OnDelete = (indexParam) => {
-    const newArray = context.cartasPedidas.filter((carta, index) => index !== indexParam)
-    context.setCartasPedidas(newArray)
+    const newArray = context.cartasPedidas.filter(
+      (carta, index) => index !== indexParam
+    );
+    context.setCartasPedidas(newArray);
+  };
+
+  const onClear = () => {
+    context.setCartasPedidas([]);
+    toast.success("Carrito vaciado")
   }
 
   return (
@@ -66,39 +53,29 @@ const cart = () => {
         </div>
         <div className="ListadoPedidos">
           <h1>Listado</h1>
+          <Button onClick={onClear}>Limpiar carrito</Button>
           <div className="listadoContainer">
             {context.cartasPedidas.map((carta, index) => (
               <div className="containerCartaList" key={index}>
                 <p className="nombreLista">{carta.name}</p>
                 <Button onClick={() => OnDelete(index)}>
-                  <DeleteIcon sx={{ color: "black", cursor:"pointer" }} />
+                  <DeleteIcon sx={{ color: "black", cursor: "pointer" }} />
                 </Button>
               </div>
             ))}
           </div>
+          <Button onClick={() => setIsDialogOpen(true)}>
+            Finalizar Compra
+          </Button>
         </div>
       </div>
-     <form onSubmit={handleOnSubmit}>
-        <TextField
-          placeholder='Nombre'
-          name='nombre'
-          value={values.nombre}
-          onChange={handleOnChange}
+      {isDialogOpen && (
+        <DialogCard
+          isOpen={isDialogOpen}
+          setIsOpen={setIsDialogOpen}
+          pedido={context.cartasPedidas}
         />
-        <TextField
-          placeholder='Apellido'
-          name='apellido'
-          value={values.apellido}
-          onChange={handleOnChange}
-        />
-        <TextField
-          placeholder='Numero'
-          name='numero'
-          value={values.numero}
-          onChange={handleOnChange}
-        />
-        <button>Enviar</button>
-      </form> 
+      )}
     </div>
   );
 };
